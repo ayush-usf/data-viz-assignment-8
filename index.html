@@ -163,6 +163,12 @@ function drawChart(filterData){
             zoom.translateExtent([[margin.left, -Infinity], [width - margin.right, Infinity]])
             zoomRect.call(zoom.transform, d3.zoomIdentity);
 
+            // Adding chart label
+            g.append("text")
+                .attr("class", "chart-label")
+                .attr("x",  width / 4)
+                .attr("y", 10)
+                .text("Filtering, Brushing, Zoom & Pan")
         }
         catch (e){
             console.log("e",e);
